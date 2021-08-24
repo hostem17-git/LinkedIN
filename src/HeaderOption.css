@@ -11,3 +11,9 @@
 .header_option:hover {
   color: black;
 }
+
+.header_option_icon {
+  object-fit: contain;
+  height: 40px !important;
+  width: 40px !important;
+}
