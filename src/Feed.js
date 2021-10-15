@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Feed.css'
+import Post from './Post'
 import InputOption from './InputOption'
 import CreateIcon from '@material-ui/icons/Create'
 import ImageIcon from '@material-ui/icons/Image';
@@ -8,6 +9,12 @@ import EventIcon from '@material-ui/icons/Event';
 import SubjectIcon from '@material-ui/icons/Subject';
 
 function Feed() {
+    const [posts, setPosts] = useState([]);
+
+
+    const sendPost = (e) => {
+        e.preventDefault(); // Stops redirection/page-refresh on form submission 
+    }
     return (
         <div className="feed">
             <div className="feed_input_container">
@@ -15,7 +22,7 @@ function Feed() {
                     <CreateIcon />
                     <form>
                         <input type="text"></input>
-                        <button type="submit">Post</button>
+                        <button onClick={sendPost} type="submit">Post</button>
                     </form>
                 </div>
 
@@ -28,7 +35,7 @@ function Feed() {
             </div>
 
             {/* Posts */}
-
+            <Post name="Vinayak" description="description" message="Message" photoUrl="" />
         </div>
     )
 }
