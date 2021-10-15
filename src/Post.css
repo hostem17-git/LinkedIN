@@ -29,6 +29,7 @@
 .post_buttons {
   margin-top: 2px;
   border-top: 1px solid rgba(158, 158, 158, 0.589);
+  padding-top: 5px;
   display: flex;
   justify-content: space-evenly;
 }
