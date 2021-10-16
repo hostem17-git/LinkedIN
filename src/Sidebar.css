@@ -9,6 +9,8 @@
 
 .sidebar_avatar {
   margin-bottom: 10px;
+  width: 60px !important;
+  height: 60px !important;
 }
 
 .sidebar_top {

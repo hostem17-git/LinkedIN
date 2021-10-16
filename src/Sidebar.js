@@ -13,7 +13,7 @@ function Sidebar() {
         <div className="sidebar">
             <div className="sidebar_top">
                 <img src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" alt="sidebar_bg" />
-                <Avatar className="sidebar_avatar" />
+                <Avatar src="https://drive.google.com/uc?export=download&id=1NiSxjJw2uuVaGp3azVvg082LyUr4dtf-" className="sidebar_avatar" />
                 <h2>Vinayak Jaiswal</h2>
                 <h4>vjjais17@gmail.com</h4>
             </div>
