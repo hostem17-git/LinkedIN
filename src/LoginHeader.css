@@ -1,0 +1,36 @@
+.login_header {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+
+.banner {
+  color: #0a66c2;
+  display: flex;
+  float: left;
+}
+.logo {
+  width: 32px;
+  object-fit: contain;
+  margin-left: 2px;
+}
+
+.signIn_button {
+  border: 2px solid #0a66c2;
+  border-radius: 25px;
+  background-color: white;
+  color: #0a66c2;
+  font-size: 14px;
+  font-weight: 550;
+  letter-spacing: 1px;
+  padding: 8px 15px;
+  width: 100px;
+  margin-left: auto;
+  cursor: pointer;
+  user-select: none;
+}
+
+.signIn_button:hover {
+  background-color: #0a66c218;
+}

@@ -4,6 +4,7 @@ import Header from "./Header"
 import Sidebar from "./Sidebar"
 import Feed from "./Feed"
 import Login from './Login'
+import LoginHeader from './LoginHeader';
 import { useSelector } from 'react-redux'
 import { selectUser } from './features/userSlice';
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <div className="app">
       {/* Header */}
-      <Header />
+      {!user ? (<LoginHeader />) : (<Header />)}
       {/* App Body */}
 
       {!user ? (<Login />) : (
