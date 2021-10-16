@@ -1,0 +1,52 @@
+.login {
+  width: 75%;
+  margin: 10vh auto;
+  display: flex;
+}
+
+.input_buttons {
+  width: 40%;
+}
+
+.hero_image {
+  width: 60%;
+}
+
+.welcome_text {
+  color: #9d6e61;
+  overflow-wrap: break-word;
+  font-weight: 200;
+  font-size: 60px;
+}
+.input_container {
+  border: 1px solid #000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  padding: 5px;
+  border-radius: 3px;
+  width: 80%;
+}
+
+.input_container > input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.input_container > label {
+  color: gray;
+  font-weight: 300;
+}
+
+.submit {
+  width: 85%;
+  border-radius: 14px;
+  padding: 10px;
+  color: white;
+  font-size: 24px;
+  background-color: #0a66c2;
+  font-weight: 100;
+  border: none;
+  margin-top: 20px;
+}
