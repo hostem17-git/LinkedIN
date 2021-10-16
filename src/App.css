@@ -4,6 +4,12 @@
   flex-direction: column;
 }
 
+.login_app {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
 .app_body {
   display: flex;
   margin-top: 10px;
