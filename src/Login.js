@@ -11,7 +11,7 @@ function Login() {
 
     const [name, setname] = useState("");
     const [description, setdescription] = useState("")
-    const [mail, setmail] = useState("")
+    const [email, setemail] = useState("")
     const [profilePic, setprofilePic] = useState("")
     const [password, setpassword] = useState("")
     const dispatch = useDispatch();
@@ -28,11 +28,35 @@ function Login() {
 
     const loginToApp = (e) => {
         e.preventDefault();
+        auth.signInWithEmailAndPassword(email, password)
+            .then(userAuth => {
+                dispatch(login({
+                    email: userAuth.user.email,
+                    uid: userAuth.user.uid,
+                    displayName: userAuth.user.displayName,
+                    profilePic: userAuth.user.photoURL
+                }))
+            }).catch(e => alert(e));
     }
 
     const register = () => {
         if (!name)
             return alert("Please enter your name");
+        auth.createUserWithEmailAndPassword(email, password)
+            .then((userAuth) => {
+                userAuth.user.updateProfile({
+                    displayName: name,
+                    photoURL: profilePic
+                })
+                    .then(() => {
+                        dispatch(login({
+                            email: userAuth.user.email,
+                            uid: userAuth.user.uid,
+                            displayName: name,
+                            photoURL: profilePic,
+                        }))
+                    })
+            }).catch(error => alert(error));
     }
 
     return (
@@ -52,17 +76,17 @@ function Login() {
 
                 <div className="input_container">
                     <label for="name">Email</label>
-                    <input value={mail} onChange={(e) => { setmail(e.target.value) }} type="text" name="name" ></input>
+                    <input value={email} onChange={(e) => { setemail(e.target.value) }} type="text" name="name" ></input>
                 </div>
                 <div className="input_container">
                     <label for="">Password</label>
-                    <input value={password} onChange={(e) => { setpassword(e.target.value) }} type="text" ></input>
+                    <input value={password} onChange={(e) => { setpassword(e.target.value) }} type="password" ></input>
                 </div>
 
                 <button class="submit" onClick={loginToApp}>Sign in</button>
 
                 <div className="register_message">
-                    <p>Not a Member? <span onClick={register} className="register_link">Register Now!</span></p>
+                    <p>Not a Member? <span onClick={register} className="register_link">Register now!</span></p>
                 </div>
             </div>
             <div className="hero_image">
@@ -76,5 +100,6 @@ function Login() {
         </div>
     )
 }
+
 
 export default Login
