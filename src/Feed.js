@@ -41,6 +41,7 @@ function Feed() {
                 <div className="feed_input">
                     <CreateIcon />
                     <form>
+                        {/* Loookkkkkkkkkk here ################################### input value not getting updated */}
                         <input type="text" value={input} onChange={e => setInput(e.target.value)}></input>
                         <button onClick={sendPost} type="submit">Post</button>
                     </form>

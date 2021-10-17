@@ -6,13 +6,15 @@ import CommentRoundedIcon from '@material-ui/icons/CommentRounded';
 import InputOption from './InputOption';
 import ShareIcon from '@material-ui/icons/Share';
 import SendIcon from '@material-ui/icons/Send';
+import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
 
 function Post({ name, description, message, photoUrl }) {
+    const user = useSelector(selectUser)
     return (
         <div className="post">
             <div className="post_header">
-                <Avatar />
-
+                <Avatar src={user.photoUrl}>{user.email[0]}</Avatar>
                 <div className="post_info">
                     <h4> {name}</h4>
                     <p>{description}</p>
