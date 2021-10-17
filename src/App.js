@@ -10,7 +10,6 @@ import { selectUser } from './features/userSlice';
 
 function App() {
   const user = useSelector(selectUser)
-
   return (
     <div className={!user ? "login_app" : "app"}>
       {/* Header */}

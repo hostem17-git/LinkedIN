@@ -51,3 +51,18 @@
   border: none;
   margin-top: 20px;
 }
+
+.register_message {
+  width: 85%;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.register_link {
+  color: #0a66c2;
+  cursor: pointer;
+}
+
+.register_link:hover {
+  text-decoration: underline;
+}
