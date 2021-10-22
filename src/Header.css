@@ -29,7 +29,9 @@
   outline: none;
   border: none;
   background: none;
+  transition: width 2s;
 }
+
 .nav_logo {
   color: #0a66c2;
   height: 2.5rem;

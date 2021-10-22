@@ -10,7 +10,6 @@ function Login() {
 
 
     const [name, setname] = useState("");
-    const [description, setdescription] = useState("")
     const [email, setemail] = useState("")
     const [profilePic, setprofilePic] = useState("")
     const [password, setpassword] = useState("")
@@ -65,25 +64,25 @@ function Login() {
                 <h1 className="welcome_text">Welcome to My Linked Clone!</h1>
 
                 <div className="input_container">
-                    <label for="name">Name</label>
+                    <label >Name</label>
                     <input value={name} onChange={(e) => { setname(e.target.value) }} type="text" name="name" ></input>
                 </div>
 
                 <div className="input_container">
-                    <label for="name">Profile Pic Url(Optional)</label>
+                    <label >Profile Pic Url(Optional)</label>
                     <input value={profilePic} onChange={(e) => { setprofilePic(e.target.value) }} type="text" name="name" ></input>
                 </div>
 
                 <div className="input_container">
-                    <label for="name">Email</label>
+                    <label >Email</label>
                     <input value={email} onChange={(e) => { setemail(e.target.value) }} type="text" name="name" ></input>
                 </div>
                 <div className="input_container">
-                    <label for="">Password</label>
+                    <label>Password</label>
                     <input value={password} onChange={(e) => { setpassword(e.target.value) }} type="password" ></input>
                 </div>
 
-                <button class="submit" onClick={loginToApp}>Sign in</button>
+                <button className="submit" onClick={loginToApp}>Sign in</button>
 
                 <div className="register_message">
                     <p>Not a Member? <span onClick={register} className="register_link">Register now!</span></p>

@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar"
 import Feed from "./Feed"
 import Login from './Login'
 import LoginHeader from './LoginHeader';
+import Widgets from './Widgets';
 import { useSelector } from 'react-redux'
 import { selectUser } from './features/userSlice';
 import { auth } from './firebase';
@@ -39,11 +40,12 @@ function App() {
 
       {!user ? (<Login />) : (
         <div className="app_body">
-          <Sidebar />
           {/* sidebar */}
-          <Feed />
+          <Sidebar />
           {/* feed */}
+          <Feed />
           {/* widgets */}
+          <Widgets />
         </div>
 
       )}

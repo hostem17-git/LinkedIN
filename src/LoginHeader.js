@@ -6,7 +6,7 @@ function LoginHeader() {
         <div className="login_header">
             <div className="banner">
                 <h1>Linked</h1>
-                <img alt="LinkedIN logo" class="logo" src="https://drive.google.com/uc?export=download&id=1vMGGgPFj3XUezKJiGyz3JeN3ZP3JZr8c" />
+                <img alt="LinkedIN logo" className="logo" src="https://drive.google.com/uc?export=download&id=1vMGGgPFj3XUezKJiGyz3JeN3ZP3JZr8c" />
             </div>
             <div className="login_buttons">
                 <button className="signIn_button">Sign in</button>

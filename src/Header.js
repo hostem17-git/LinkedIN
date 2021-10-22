@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import SearchIcon from '@material-ui/icons/Search';
 import "./Header.css"
 import HeaderOption from './HeaderOption';
@@ -9,11 +9,10 @@ import WorkIcon from '@material-ui/icons/Work';
 import MessageIcon from '@material-ui/icons/Message';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { auth } from './firebase';
-import { logout, selectUser } from "./features/userSlice"
+import { logout } from "./features/userSlice"
 
 
 function Header() {
-    const user = useSelector(selectUser);
     const dispatch = useDispatch();
     function logoutApp() {
         dispatch(logout);

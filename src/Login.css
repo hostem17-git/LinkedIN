@@ -50,6 +50,12 @@
   font-weight: 100;
   border: none;
   margin-top: 20px;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+.submit:active {
+  transform: (scale(0.8));
 }
 
 .register_message {

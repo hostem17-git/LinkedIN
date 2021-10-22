@@ -1,5 +1,5 @@
 import { Avatar } from '@material-ui/core'
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './Post.css'
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import CommentRoundedIcon from '@material-ui/icons/CommentRounded';
@@ -9,12 +9,12 @@ import SendIcon from '@material-ui/icons/Send';
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 
-function Post({ name, description, message, photoUrl }) {
-    const user = useSelector(selectUser)
+
+const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
     return (
-        <div className="post">
+        <div ref={ref} className="post">
             <div className="post_header">
-                <Avatar src={user.photoUrl}>{user.email[0]}</Avatar>
+                <Avatar src={photoUrl}>{name[0].toUpperCase()}</Avatar>
                 <div className="post_info">
                     <h4> {name}</h4>
                     <p>{description}</p>
@@ -32,6 +32,6 @@ function Post({ name, description, message, photoUrl }) {
             </div>
         </div>
     )
-}
+})
 
 export default Post
