@@ -20,6 +20,7 @@ function Feed() {
     const user = useSelector(selectUser);
 
     useEffect(() => {
+        console.log("getting posts")
         db.collection("posts").orderBy('timestamp', "desc").onSnapshot((snapShot) => (
             setPosts(
                 snapShot.docs.map((doc) => ({
@@ -40,6 +41,7 @@ function Feed() {
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
         setinput("")
+        document.getElementById("postInput").value = "";
     }
     return (
         <div className="feed">
@@ -48,7 +50,7 @@ function Feed() {
                     <CreateIcon />
                     <form>
                         {/* Loookkkkkkkkkk here ################################### input value not getting updated */}
-                        <input value={input} onChange={(e) => { console.log(input); setinput(e.target.value) }} type="text"></input>
+                        <input type="text" id='postInput' onChange={(e) => setinput(e.target.value)}  ></input>
                         <button onClick={sendPost} type="submit">Post</button>
                     </form>
                 </div>

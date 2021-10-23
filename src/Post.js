@@ -6,8 +6,6 @@ import CommentRoundedIcon from '@material-ui/icons/CommentRounded';
 import InputOption from './InputOption';
 import ShareIcon from '@material-ui/icons/Share';
 import SendIcon from '@material-ui/icons/Send';
-import { useSelector } from 'react-redux';
-import { selectUser } from './features/userSlice';
 
 
 const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {

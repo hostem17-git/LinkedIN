@@ -8,7 +8,6 @@ import { login } from "./features/userSlice"
 
 function Login() {
 
-
     const [name, setname] = useState("");
     const [email, setemail] = useState("")
     const [profilePic, setprofilePic] = useState("")
@@ -26,6 +25,7 @@ function Login() {
     };
 
     const loginToApp = (e) => {
+        console.log("login attempt")
         e.preventDefault();
         auth.signInWithEmailAndPassword(email, password)
             .then(userAuth => {
@@ -62,31 +62,32 @@ function Login() {
         <div className="login">
             <div className="input_buttons">
                 <h1 className="welcome_text">Welcome to My Linked Clone!</h1>
+                <form>
+                    <div className="input_container">
+                        <label >Name</label>
+                        <input value={name} onChange={(e) => { setname(e.target.value) }} type="text" name="name" ></input>
+                    </div>
 
-                <div className="input_container">
-                    <label >Name</label>
-                    <input value={name} onChange={(e) => { setname(e.target.value) }} type="text" name="name" ></input>
-                </div>
+                    <div className="input_container">
+                        <label >Profile Pic Url(Optional)</label>
+                        <input value={profilePic} onChange={(e) => { setprofilePic(e.target.value) }} type="text" name="name" ></input>
+                    </div>
 
-                <div className="input_container">
-                    <label >Profile Pic Url(Optional)</label>
-                    <input value={profilePic} onChange={(e) => { setprofilePic(e.target.value) }} type="text" name="name" ></input>
-                </div>
+                    <div className="input_container">
+                        <label >Email</label>
+                        <input value={email} onChange={(e) => { setemail(e.target.value) }} type="text" name="name" ></input>
+                    </div>
+                    <div className="input_container">
+                        <label>Password</label>
+                        <input value={password} onChange={(e) => { setpassword(e.target.value) }} type="password" ></input>
+                    </div>
 
-                <div className="input_container">
-                    <label >Email</label>
-                    <input value={email} onChange={(e) => { setemail(e.target.value) }} type="text" name="name" ></input>
-                </div>
-                <div className="input_container">
-                    <label>Password</label>
-                    <input value={password} onChange={(e) => { setpassword(e.target.value) }} type="password" ></input>
-                </div>
+                    <button className="submit" onClick={loginToApp}>Sign in</button>
 
-                <button className="submit" onClick={loginToApp}>Sign in</button>
-
-                <div className="register_message">
-                    <p>Not a Member? <span onClick={register} className="register_link">Register now!</span></p>
-                </div>
+                    <div className="register_message">
+                        <p>Not a Member? <span onClick={register} className="register_link">Register now!</span></p>
+                    </div>
+                </form>
             </div>
             <div className="hero_image">
                 <Lottie
@@ -95,7 +96,6 @@ function Login() {
                     width={800}
                 />
             </div>
-
         </div>
     )
 }
